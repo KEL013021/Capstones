@@ -110,11 +110,15 @@
 </div>
 
 <script>
+  // add this point we search in internet to use of some API and we use ipinfo the free edition
+
+  //rhis part set the longhitude and latitude to null 
   let userLat = null;
   let userLon = null;
   let placeLat = null;
   let placeLon = null;
 
+  //this function use to get the longhitude and latitude came from internet and modify it
   function getDistance(lat1, lon1, lat2, lon2) {
     const R = 6371000;
     const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -126,6 +130,7 @@
     return R * c;
   }
 
+  //int this parct checking user location and ip address
   function checkLocation() {
     const userName = document.getElementById('name').value || "Guest";
     document.getElementById('status').innerText = "Checking location...";
@@ -152,6 +157,7 @@
       });
   }
 
+  //this fuction is search to place what you want
   function searchPlace() {
     const place = document.getElementById('place').value;
     if (!place) {
@@ -186,7 +192,7 @@
         console.error(error);
       });
   }
-
+  //this fucntion is to compute the distance of user and searched location 
   function updateDistance() {
     if (userLat !== null && placeLat !== null) {
       const dist = getDistance(userLat, userLon, placeLat, placeLon);
@@ -194,6 +200,7 @@
     }
   }
 
+  // this fuction is the show map
   function showMap(lat, lon, zoom) {
     const tileX = Math.floor((lon + 180) / 360 * Math.pow(2, zoom));
     const tileY = Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom));
