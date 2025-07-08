@@ -209,6 +209,7 @@
     document.getElementById('map').style.backgroundImage = `url('${mapURL}')`;
     document.getElementById('map').innerText = '';
   }
+  
 </script>
 
 </body>
