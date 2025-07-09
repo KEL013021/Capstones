@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenStreetMap + Address Search + Distance</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="section-name">OpenStreetMap + Address Search + Distance</div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="left-panel">
+    <label for="name">Your Name:</label><br>
+    <input type="text" class="search-input" id="name" placeholder="Enter Your Name..."><br>
+    <button onclick="checkLocation()">📍 My Location</button>
+
+    <p id="user-status">Status: Waiting for action...</p>
+    <p id="ip-address">Your IP: Not detected yet</p>
+    <p id="user-coords">Your Coordinates: </p>
+
+    <hr style="margin-top: 20px;">
+
+    <label for="place">Where do you want to go?</label><br>
+    <input type="text" class="place-input" id="place" placeholder="e.g. SM Batangas, Nasugbu"><br>
+    <button onclick="searchPlace()">🔍 Search Place</button>
+    <button onclick="clearPins()">🗑️ Clear Pins</button>
+
+    <p id="status">Status: Waiting for action...</p>
+    <p id="place-coords">Place Coordinates: </p>
+    <p id="distance-info">Distance: </p>
+  </div>
+
+  <div class="right-panel">
+    <div id="map">Map will load here...</div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
