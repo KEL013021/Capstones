@@ -1,0 +1,4 @@
+1. The app works as expected: it detects the user's location via IP, allows address search using OpenStreetMap, and calculates distance between user and destination.
+2. The UI is clean, simple, and easy to understand.
+3. Coordinates and distance calculations are accurate and well-presented.
+4. Minor Suggestion: Adding map drag and zoom functionality to improve interactivity. Currently, the map image is static and not interactive.
